@@ -56,6 +56,7 @@
     justify-content: start;
     align-items: center;
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(20px, 1fr))
 }
 
 .icon-sidebar {
@@ -93,13 +94,19 @@ li > a {
 .header {
     display: grid;
     grid-template-rows: 3fr 5fr;
-    padding: 2.5%;
+
+}
+
+.header-icon {
+    height: 28px;
 }
 
 .upper-header {
     display: grid;
-    grid-template-columns: 6fr 3fr;
-    gap: 2%;
+    grid-template-columns: 5fr 2fr;
+    justify-content: center;
+    padding: 1em;
+    gap: 5%;
 }
 
 .search {
@@ -107,10 +114,7 @@ li > a {
     flex-wrap: wrap;
     align-items: center;
     justify-content: stretch;
-}
-
-.search img {
-    flex-shrink: 1;
+    gap: 1.5%;
 }
 
 #search-bar {
@@ -118,9 +122,37 @@ li > a {
     padding: 8px;
     border-radius: 16px;
     flex-grow: 1;
-    border-style: none;
+    border-style: solid;
+    border-color: silver
+}
+
+#search-bar:focus, #search-bar:focus-visible > #search-bar{
+    border-color: rgba(0, 0, 0, 0.3);
 }
 
 #search-bar::placeholder {
     font-size: 14px;
+}
+
+.panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.username.panel{
+    flex-wrap: nowrap;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    border-left-style: solid;
+    border-left-color: #333;
+    border-left-width: 2px;
+    padding-left: 1.25em;
+}
+
+.avatar {
+    height: 48px;
+    border-radius: 32px;
 }
